@@ -4,7 +4,7 @@ This project demonstrates the usage of Apple's new Swift language with the MySQL
 
 
 
-** Before building this project, please note these dependencies - **
+Before building this project, please note these dependencies -
 
 
 
@@ -35,3 +35,13 @@ After installation, either rename the folder to match the /usr/local/mysql path,
 Finally, the MySQL APIs are imported into Swift as a module, where the header files are stored at /usr/local/mysql/include/mysql.h
 
 If your MySQL headers are located elsewhere, edit the module.map file accordingly.
+
+
+The reference manual for the MySQL C API is here -
+
+[https://dev.mysql.com/doc/refman/5.7/en/c-api.html](https://dev.mysql.com/doc/refman/5.7/en/c-api.html)
+
+
+For multi-threaded usage, see this page of the MySQL documentation -
+
+[https://dev.mysql.com/doc/refman/5.7/en/c-api-threaded-clients.html](https://dev.mysql.com/doc/refman/5.7/en/c-api-threaded-clients.html)

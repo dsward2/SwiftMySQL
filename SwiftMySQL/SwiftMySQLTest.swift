@@ -10,6 +10,8 @@ import Cocoa
 
 import mysql
 
+private let mysqlThreadNSLock: NSLock = NSLock()
+
 @objc class SwiftMySQLTest: NSObject
 {
     var mysql_connection: UnsafeMutablePointer<MYSQL>! = nil
@@ -60,6 +62,8 @@ import mysql
        
         if (mysql_connection! != nil)
         {
+            mysqlThreadNSLock.lock()
+        
             mysql_set_character_set(mysql_connection, "utf8")
 
             let showDatabasesString = "SHOW DATABASES"  // test your MySQL query here
@@ -83,6 +87,8 @@ import mysql
                     row = mysql_fetch_row(mysqlResult)
                 }
             }
+
+            mysqlThreadNSLock.unlock()
             
             mysql_close(mysql_connection)
             mysql_connection = nil
