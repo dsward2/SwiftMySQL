@@ -93,5 +93,7 @@ private let mysqlThreadNSLock: NSLock = NSLock()
             mysql_close(mysql_connection)
             mysql_connection = nil
         }
+        
+        mysql_thread_end()
     }
 }
